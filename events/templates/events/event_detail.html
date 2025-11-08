@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>{{ event.title }}</title>
+<style>
+body{text-align:center;font-family:sans-serif;background:#f7f9fc;}
+.card{background:white;padding:30px;margin:40px auto;width:50%;border-radius:15px;box-shadow:0 4px 10px rgba(0,0,0,0.1);}
+button{background:#0077b6;color:white;border:none;padding:10px 20px;border-radius:8px;}
+button:hover{background:#023e8a;}
+</style>
+</head>
+<body>
+<div class="card">
+  <h1>{{ event.title }}</h1>
+  <p>{{ event.description }}</p>
+  <p>📅 {{ event.date }} - {{ event.time }}</p>
+  <p>📍 {{ event.location }}</p>
+  <p>💰 ₹{{ event.price }}</p>
+  <p>🎟️ Seats: {{ event.available_seats }}</p>
+  <a href="/book/{{ event.id }}/"><button>Book Ticket</button></a>
+</div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Book {{ event.title }}</title>
+<style>
+body{background:linear-gradient(120deg,#84fab0,#8fd3f4);text-align:center;font-family:sans-serif;}
+form{background:white;padding:30px;width:40%;margin:50px auto;border-radius:15px;box-shadow:0 4px 10px rgba(0,0,0,0.2);}
+input{width:90%;padding:10px;margin:8px;border-radius:8px;border:1px solid #ccc;}
+button{background:#0077b6;color:white;padding:10px 20px;border:none;border-radius:8px;}
+button:hover{background:#023e8a;}
+</style>
+</head>
+<body>
+<h2 style="color:#0077b6;">Book for {{ event.title }}</h2>
+<form method="POST">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Confirm Booking</button>
+</form>
+</body>
+</html>

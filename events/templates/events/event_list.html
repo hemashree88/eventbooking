@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Events</title>
+<style>
+body{background:#f9f9f9;font-family:sans-serif;text-align:center;}
+.card{background:white;margin:20px auto;padding:20px;width:60%;border-radius:15px;box-shadow:0 4px 10px rgba(0,0,0,0.1);}
+button{background:#0077b6;color:white;border:none;padding:8px 15px;border-radius:8px;margin:5px;}
+button:hover{background:#023e8a;}
+a{text-decoration:none;color:white;}
+</style>
+</head>
+<body>
+<h1 style="color:#0077b6;">Available Events</h1>
+<a href="/add/"><button>Add Event</button></a>
+{% for event in events %}
+<div class="card">
+  <h2>{{ event.title }}</h2>
+  <p>{{ event.description }}</p>
+  <p>📅 {{ event.date }} at {{ event.time }}</p>
+  <p>📍 {{ event.location }}</p>
+  <p>💰 Price: ₹{{ event.price }}</p>
+  <p>🎟️ Seats left: {{ event.available_seats }}</p>
+  <a href="/event/{{ event.id }}/"><button>View</button></a>
+</div>
+{% endfor %}
+</body>
+</html>
